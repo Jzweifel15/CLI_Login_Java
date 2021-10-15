@@ -6,4 +6,5 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class SecureTest {
+    // TODO: Add Testing for Secure class
 }
