@@ -21,6 +21,12 @@ public class SecureTest {
         Assert.assertTrue("Test encryption did not match", Secure.encrypt(testPassword).equals("97_PslliAiflt_79"));
     }
 
+    // Test Decryption
+    @Test
+    public void testDecryption() {
+        Assert.assertTrue("Test decryption did not match", Secure.decrypt("97_PslliAiflt_79").equals(testPassword));
+    }
+
     // Post-test teardown
     @After
     public void postTest() {
