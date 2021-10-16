@@ -4,13 +4,14 @@ import com.company.User;
 import Security.Secure;
 import org.junit.Assert;
 import org.junit.Before;
-//import org.junit.After;
+import org.junit.After;
 import org.junit.Test;
 
 public class UserTest {
     User user1;
     User user2;
 
+    // Pre-test set up
     @Before
     public void preTest() {
         user1 = new User("zweifelj", "!@Amazon_CMH1_Warriors@!");
@@ -45,6 +46,12 @@ public class UserTest {
     public void testRetrievePassword() {
         Assert.assertTrue("Successfully retrieved user1's password", user1.getPassword().equals(Secure.encrypt("!@Amazon_CMH1_Warriors@!")));
         Assert.assertTrue("Successfully retrieved user2's password", user2.getPassword().equals(Secure.encrypt("HelloWorld123")));
+    }
+
+    // Post-test teardown
+    @After
+    public void postTest() {
+        User.clear();
     }
 
 }
