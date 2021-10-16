@@ -33,6 +33,13 @@ public class User {
     }
 
     /**
+     * Class method that clears all the current users stored in the data store
+     */
+    public static void clear() {
+        User.users.clear();
+    }
+
+    /**
      * Class method for saving a User instance after a successful authentication process
      * @param verifiedUser a successfully verified user
      */
